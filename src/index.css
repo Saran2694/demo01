@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-cream-50 text-velourabrown dark:bg-velourabrown-dark dark:text-cream-50 transition-colors duration-300 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-cream-100 dark:bg-velourabrown-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/50 rounded-full hover:bg-gold transition-colors duration-200;
+}
+
+/* Custom Utilities for Luxury Vibe */
+.glass-nav {
+  @apply bg-white/70 dark:bg-velourabrown-dark/70 backdrop-blur-md border-b border-beige-100/50 dark:border-velourabrown/20;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #E6C594 0%, #C5A059 50%, #A37E3E 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #E6C594 0%, #C5A059 50%, #A37E3E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(to right, #E6C594, #C5A059, #A37E3E) 1;
+}
+
+/* Pinterest style grid cards */
+.pin-card {
+  break-inside: avoid;
+  @apply mb-4 overflow-hidden rounded-2xl bg-white dark:bg-velourabrown shadow-luxury hover:shadow-luxury-lg transition-all duration-300 hover:-translate-y-1;
+}
+
+/* Shimmer/Pulse effect for premium loading */
+.luxury-shimmer {
+  background: linear-gradient(90deg, rgba(245,239,235,0.6) 25%, rgba(229,213,195,0.6) 50%, rgba(245,239,235,0.6) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
